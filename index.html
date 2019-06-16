@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <title>HTML-Workshop</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <header>Titelzeile</header>
+
+
+    <div class="content" title="Seiteninhalt">
+
+        <aside>
+            <h2>Sidebar</h2>
+            <nav>
+
+                <ul>
+                    <li>
+                        <a href="#">Teilnehmer</a>
+                    </li>
+                    <li>
+                        <a href="#">Termine</a>
+                    </li>
+                    <li>
+                        <a href="#">Schulungsinhalt</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </aside>
+
+        <main>
+
+            <section>
+                <h2>Teilnehmer</h2>
+
+                <table>
+                    <tr>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>E-Mail-Adresse</th>
+                    </tr>
+
+                </table>
+
+                <form>
+                    <div>
+                        <label for="vorname">Vorname</label>
+                        <input id="vorname" type="text">
+                    </div>
+                    <div>
+                        <label for="name">Name</label>
+                        <input id="name" type="text">
+                    </div>
+                    <div>
+                        <label for="email">E-Mail</label>
+                        <input id="email" type="text">
+                    </div>
+                    <input type="button" value="Hinzuf&uuml;gen" onclick="personHinzufuegen()">
+                </form>
+
+            </section>
+
+        </main>
+
+
+
+    </div>
+
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>

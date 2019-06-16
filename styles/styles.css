@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(199, 230, 240);
+    font-family: sans-serif;
+    margin: 0;
+}
+
+aside, main, header {
+    padding: 10px;
+}
+
+header {
+    background-color: lightgreen;
+    height: 30px;
+}
+
+aside {
+    width: 200px;
+    flex: none;
+    background-color: lightgrey;
+}
+
+main {
+    width: 100%;
+    background-color: seashell;
+}
+
+.content {
+    display: flex;
+    height: calc(100vh - 50px);
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form {
+    margin-top: 2em;
+}
+
+label {
+    display: block;
+}
+
+input[type="button"] {
+    margin-top: 1em;
+}
+
+th, td {
+    border: 1px solid black;
+}

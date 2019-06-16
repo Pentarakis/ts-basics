@@ -1,0 +1,11 @@
+{
+  "name": "ts-basics",
+  "version": "1.0.0",
+  "description": "example project for JavaScript and TypeScrpt basics workshop",
+  "main": "\"\"",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Konstantin Pentarakis",
+  "license": "ISC"
+}

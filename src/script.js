@@ -1,73 +1,48 @@
-let personHinzufuegen;
-(function () { // IIFE
 
-    // Anwendung soll erst starten, wenn vollstaendig geladen
-    document.addEventListener('DOMContentLoaded', starteApp, false);
-
-    // Event-Handler global bekannt machen
-    personHinzufuegen = onClickPersonHinzufuegen;
+// Anwendung soll erst starten, wenn vollstaendig geladen
+document.addEventListener('DOMContentLoaded', starteApp, false);
 
 
-    /*** START-Funktion ***/
-    function starteApp() {
-        const tabelle = findeElement('table tbody');
-        const teilnehmerListe = gibTeilnehmerListe();
+/*** START-Funktion ***/
+function starteApp() {
+    const table = _findElement('table tbody');
+    const characterListe = _getCharacterList();
 
-        teilnehmerListe.forEach(teilnehmer => {
-            tabelle.appendChild(erzeugeZeileFuerTeilnehmer(teilnehmer));
-        });
-    }
+    characterListe.forEach(character => {
+        _addCharacterToTable(character, table);
+    });
+}
 
-    function onClickPersonHinzufuegen() {
-        const neuerTeilnehmer = {
-            vorname: findeElement('#vorname').value,
-            name: findeElement('#name').value,
-            email: findeElement('#email').value
-        };
-        gibTeilnehmerListe().push(neuerTeilnehmer);
-        findeElement('table tbody').appendChild(erzeugeZeileFuerTeilnehmer(neuerTeilnehmer));
-    }
+function addCharacter() {
+    const newCharacter = {
+        name: _findElement('#name').value,
+        culture: _findElement('#culture').value
+    };
+    const table = _findElement('table tbody');
+    _addCharacterToTable(newCharacter, table);
+    _getCharacterList().push(newCharacter);
+}
 
 
-    /*** HILFSFUNKTIONEN ***/
+/*** HILFSFUNKTIONEN ***/
+function _addCharacterToTable(character, table) {
+    const row = table.insertRow();
+    const cellName = row.insertCell(0);
+    const cellCulture = row.insertCell(1);
+    cellName.innerText = character.name;
+    cellCulture.innerText = character.culture;
+}
 
-    // Erzeugt eine HTML-Tabellenzeile fuer ein Teilnehmer-Objekt
-    function erzeugeZeileFuerTeilnehmer(teilnehmer) {
-        const zeile = erzeugeZeile();
-        zeile.appendChild(erzeugeZelle(teilnehmer.vorname));
-        zeile.appendChild(erzeugeZelle(teilnehmer.name));
-        zeile.appendChild(erzeugeZelle(teilnehmer.email));
+function _findElement(selector) {
+    return document.querySelectorAll(selector)[0];
+}
 
-        return zeile;
-    }
-
-    // Erzeugt eine leere HTML-Tabellenzeile 
-    function erzeugeZeile() {
-        return document.createElement('tr');
-    }
-
-    // Erzeugt eine Zelle mit dem gegebenen Inhalt
-    function erzeugeZelle(inhalt) {
-        const textNode = document.createTextNode(inhalt);
-        const zelle = document.createElement('td');
-        zelle.appendChild(textNode);
-
-        return zelle;
-    }
-
-    function findeElement(selector) {
-        return document.querySelectorAll(selector)[0];
-    }
-
-    // Gibt das Array mit den Teilnehmern zurueck
-    function gibTeilnehmerListe() {
-        return [
-            {
-                vorname: 'Albert',
-                name: 'Einstein',
-                email: 'albert@einstein.de',
-            }
-        ];
-    }
-
-})();
+// Gibt das Array mit den Teilnehmern zurueck
+function _getCharacterList() {
+    return [
+        {
+            name: 'Albert Einstein',
+            culture: 'Deutsch',
+        }
+    ];
+}

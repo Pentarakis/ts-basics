@@ -2,16 +2,16 @@
 <html lang="de">
 
 <head>
-    <title>HTML-Workshop</title>
+    <title>TS-Workshop</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
 
-    <header>Titelzeile</header>
+    <header>TS-Workshop</header>
 
 
-    <div class="content" title="Seiteninhalt">
+    <div class="content">
 
         <aside>
             <h2>Sidebar</h2>
@@ -19,13 +19,7 @@
 
                 <ul>
                     <li>
-                        <a href="#">Teilnehmer</a>
-                    </li>
-                    <li>
-                        <a href="#">Termine</a>
-                    </li>
-                    <li>
-                        <a href="#">Schulungsinhalt</a>
+                        <a href="#">Characters</a>
                     </li>
                 </ul>
 
@@ -39,27 +33,22 @@
 
                 <table>
                     <tr>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
-                        <th>E-Mail-Adresse</th>
+                        <th>Name</th>
+                        <th>Culture</th>
                     </tr>
 
                 </table>
 
                 <form>
                     <div>
-                        <label for="vorname">Vorname</label>
-                        <input id="vorname" type="text">
-                    </div>
-                    <div>
                         <label for="name">Name</label>
                         <input id="name" type="text">
                     </div>
                     <div>
-                        <label for="email">E-Mail</label>
-                        <input id="email" type="text">
+                        <label for="culture">Culture</label>
+                        <input id="culture" type="text">
                     </div>
-                    <input type="button" value="Hinzuf&uuml;gen" onclick="personHinzufuegen()">
+                    <button type="button" onclick="addCharacter()">Save</button>
                 </form>
 
             </section>
